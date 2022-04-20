@@ -11,8 +11,8 @@ User Registration Test
     Open Browser  ${web_url}  chrome
     Maximize Browser Window
     sleep  1s
-    Execute Javascript  window.scrollTo(0,400)
-    Click Element  Xpath:/html/body/section/div/div/div[2]/div[3]/div/form/div/center[2]/p/a
+
+    Click Element  xpath://html/body/section/div/div/div[2]/div[3]/div/form/div/center[2]/p/a
     Test name
     sleep  1s
     Test user age
@@ -129,12 +129,17 @@ Buy Product Test
     Test Search Product
     Click Button  Xpath:/html/body/nav/div/div/div/form/button
     sleep  1s
-    Execute Javascript  window.scrollTo(0,800)
-    Click Link    Xpath:/html/body/div[3]/div/div/center/div/div[2]/a[2]
+    Scroll Element into view  xpath=//html/body/div[3]/div/div/center/div/div[2]/center/a
     sleep  1s
-    Execute Javascript  window.scrollTo(0,500)
-    Click Button  Xpath:/html/body/div/div/div/center[2]/a/button
+    Execute Javascript  window.scrollTo(0,1500)
+    Click Element    Xpath://html/body/div[3]/div/div/center/div/div[2]/center/a
     sleep  1s
+    Click Element  Xpath://html/body/div/div/div/aside[2]/article/a
+    sleep  1s
+    Click Button  Xpath://html/body/div/div/div/center[2]/a/button
+    sleep  1s
+    Click Button  Xpath://html/body/div[2]/div[2]/div[2]/a/button
+    sleep  4s
     Close Browser
 
 View order to Seller Test
@@ -144,13 +149,13 @@ View order to Seller Test
     Maximize Browser Window
     sleep  1s
     Click Element  Xpath:/html/body/nav/div/div/ul/li[2]/a
-    Test email
-    Test password
+    Input text  name:email  ramyagandhi16@gmail.com
+    Input text  name:pass  R@mya12345
     Click Button  Xpath:/html/body/section/div/div/div/div/div[3]/div/div[2]/div/form/div[4]/button
-    Click Element  Xpath:/html/body/nav/div/div/ul/li[4]/a
+    Click Element  Xpath://html/body/nav/div/div/ul/li[4]/a
     sleep  2s
-    Click Element  Xpath:/html/body/nav/div/div/div/div/a/img
-    Click Element  Xpath:/html/body/nav/div/div/div/div/ul/li[3]/a
+    Click Element  Xpath://html/body/nav/div/div/div/div/a/img
+    Click Element  Xpath://html/body/nav/div/div/div/div/ul/li[3]/a
     sleep  1s
     Close Browser
 
@@ -167,33 +172,23 @@ Remove item in cart Test
     Test password
     Click Button  Xpath:/html/body/section/div/div/div[2]/div[3]/div/form/div/button
     sleep  1s
-    Test Search Product
-    Click Button  Xpath:/html/body/nav/div/div/div/form/button
+
+    Click Element  Xpath://html/body/nav/div/div/ul/li/a
     sleep  1s
-    Execute Javascript  window.scrollTo(0,800)
-    Click Link   Xpath:/html/body/div[3]/div/div/center/div/div[2]/a[2]
+    Click Link  Xpath:/html/body/nav/div/div/ul/li/ul/li[9]/a
+    sleep  2s
+    Click Link   Xpath://html/body/div[19]/div/div[2]/center/div/div[2]/center/a
     sleep  1s
-    Click Link  Xpath:/html/body/div/div/div/form[1]/table/tbody/tr/td[4]/a[2]
+    Click Link  Xpath://html/body/div/div/div/aside[2]/article/a
     sleep  3s
+    Click Element  Xpath://html/body/div/div/div/form/table/tbody/tr/td[4]/a[2]
+    sleep  3s
+    Click Element  xpath://html/body/div/nav/div/div/div/div/a/img
+    Click Element  xpath://html/body/div/nav/div/div/div/div/ul/li[3]/a
+    sleep  1s
     Close Browser
 
 
-Category Select Test
-     [Documentation]  these is for category select test
-     [Tags]  user
-     Open Browser  ${web_url}  chrome
-     Maximize Browser Window
-
-     sleep  1s
-     Test email
-     Test password
-     Click Button  Xpath:/html/body/section/div/div/div[2]/div[3]/div/form/div/button
-     sleep   1s
-     Click Element  Xpath:/html/body/nav/div/div/ul/li/a
-     sleep  2s
-     Click Link  Xpath:/html/body/nav/div/div/ul/li/ul/li[9]/a
-     sleep   5s
-     Close Browser
 
 Test User details update and Logout
      [Documentation]  these is for update the userdetails and logout
@@ -222,14 +217,12 @@ Test User details update and Logout
      Click Element  Xpath:/html/body/nav/div/div/div/div/a/img
      Click Element  Xpath:/html/body/nav/div/div/div/div/ul/li[3]/a
      sleep  1s
-     Close Browser
+
 
 Relogin to check update test:
     [Documentation]  these is for update check test
     [Tags]  user
-    Open Browser  ${web_url}  chrome
-    Maximize Browser Window
-    sleep  1s
+
     Test email
     Test password
     Click Button  Xpath:/html/body/section/div/div/div[2]/div[3]/div/form/div/button
@@ -240,21 +233,6 @@ Relogin to check update test:
     sleep  1s
     Close Browser
 
-#
-#Test Forgot Password
-#    [Documentation]  this test for forgot password
-#    [Tags]  seller
-#    Open Browser  ${web_url}  chrome
-#    Maximize Browser Window
-#    sleep  1s
-#    Click Element  Xpath:/html/body/nav/div/div/ul/li[2]/a
-#    sleep  1s
-#    Click Element  Xpath:/html/body/section/div/div/div/div/div[3]/div/div[2]/div/form/a[1]
-#    sleep  1s
-#    Test email
-#    Click Button  Xpath:/html/body/section/div/div/div/div/div/div[2]/div/form/div[3]/button
-#    sleep  1s
-#
 
 
 
